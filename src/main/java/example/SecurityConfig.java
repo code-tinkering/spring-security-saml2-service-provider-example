@@ -34,6 +34,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
             .saml2Login(withDefaults())
-            .addFilterBefore(filter, Saml2WebSsoAuthenticationFilter.class);
+            .addFilterBefore(filter, Saml2WebSsoAuthenticationFilter.class)
+                .antMatcher("/**")
+                .authorizeRequests()
+                .antMatchers("/**").authenticated();
     }
 }

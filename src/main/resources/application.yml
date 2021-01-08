@@ -8,7 +8,7 @@ logging:
     root: DEBUG
     org.springframework.web: INFO
     org.springframework.security: INFO
-    org.springframework.security.saml: TRACE
+    org.springframework.security.saml: INFO
     org.opensaml.xmlsec: TRACE
 
 spring:
@@ -17,11 +17,13 @@ spring:
       relyingparty:
         registration:
           samlexample:
-            signing.credentials:
-              - private-key-location: "classpath:credentials/service-provider-private.key"
-                certificate-location: "classpath:credentials/service-provider-certificate.crt"
+            signing:
+              credentials:
+                - private-key-location: "classpath:credentials/private.key"
+                  certificate-location: "classpath:credentials/public.cer"
             identityprovider:
-              entity-id: http://localhost:8081/sample-idp/saml/idp/metadata
-              verification.credentials:
-                - certificate-location: "classpath:credentials/identity-provider-certificate.crt"
+              singlesignon:
+                sign-request: false
+              entity-id: codetinkering.com
               sso-url: http://localhost:8081/sample-idp/saml/idp/select
+              metadata-uri: http://localhost:8081/sample-idp/saml/idp/metadata
