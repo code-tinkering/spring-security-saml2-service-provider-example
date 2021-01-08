@@ -25,6 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        // This will enable the m
         Converter<HttpServletRequest, RelyingPartyRegistration> relyingPartyRegistrationResolver =
                 new DefaultRelyingPartyRegistrationResolver(this.relyingPartyRegistrationRepository);
 

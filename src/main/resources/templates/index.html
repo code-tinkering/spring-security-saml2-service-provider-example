@@ -4,15 +4,12 @@
     <title>Spring Security SAML2</title>
 </head>
 <body>
+<h1>SAML2 Login Example with Spring Security 5.2</h1>
+<div>You are logged in as <span sec:authentication="name"></span></div>
 <div>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logout" />
     </form>
-    <a href="https://your-identity-provider.com/sample-idp/saml/idp/logout/alias/boot-sample-idp/">
-        Log out of your identity provider
-    </a>
 </div>
-    <h1>SAML2 Login Example with Spring Security 5.2</h1>
-    <div>You are logged in as <span sec:authentication="name"></span></div>
 </body>
 </html>
