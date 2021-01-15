@@ -27,3 +27,5 @@ spring:
               entity-id: codetinkering.com
               sso-url: http://localhost:8081/sample-idp/saml/idp/select
               metadata-uri: http://localhost:8081/sample-idp/saml/idp/metadata
+#              verification.credentials:
+#                - certificate-location: "classpath:credentials/identity-provider-certificate.crt"
